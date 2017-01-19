@@ -1,13 +1,3 @@
-"""
-Pygame base template for opening a window, done with functions
- 
- Sample Python/Pygame Programs
- Simpson College Computer Science
- http://programarcadegames.com/
- http://simpson.edu/computer-science/
- 
-"""
- 
 import pygame
 from random import randrange
 import gc
@@ -33,7 +23,7 @@ SIDE = 20
 # Defining game classes
 
 class Text():
-    '''This is the classes for text variables''' 
+    '''This is the class for text variables''' 
     def __init__(self, integer):
         text = str(integer)
         text2 = ''
@@ -109,9 +99,8 @@ class Board():
                 block.drawBlock(screen)
 
     def newGround(self, blockList):
-        '''This method grabs the blokcs that fell to the ground
-        and makes them ground blocks. If in delete list, it might
-        be turned of for drawing'''
+        '''This method grabs the blocks that fell to the ground
+        and makes them ground blocks.'''
         for block in blockList:
             self.groundBlocks.append(block)
 
@@ -125,7 +114,8 @@ class Board():
         return counter
         
     def deleteLine(self, deleteList):
-        '''this method delete blocks from flaged lines'''
+        '''this method delete blocks from flaged lines. The ones 
+        in deleteList won't be drawn'''
         deleteBlocks = []
         for block in self.groundBlocks:
             if deleteList.count(block.y):
