@@ -1,6 +1,5 @@
 import pygame
 from random import randrange
-import gc
 
 
 # Define some colors as global constants
